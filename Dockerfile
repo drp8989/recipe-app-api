@@ -17,7 +17,7 @@ RUN python -m venv /py && \
         gcc libc-dev linux-headers postgresql-dev && \
     /py/bin/pip install -r /tmp/requirements.txt && \
     if [ $DEV = "true" ] ; \
-        then echo "--DEV BUILD--" && /py/bin/pip install -r /tmp/requirements.dev.txt ; \
+        then  /py/bin/pip install -r /tmp/requirements.dev.txt ; \
     fi && \
     apk del .tmp-build-deps && \
     rm -rf /tmp && \
